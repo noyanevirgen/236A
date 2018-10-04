@@ -1,0 +1,48 @@
+\documentclass[]{report}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage{mathtools}
+% Title Page
+\title{Electrical and Computer Engineering \\
+	Linear Programming (ECE 236A)\\
+	Homework 1
+	}
+\author{Noyan Evirgen \\	
+		205220656}
+
+\titleformat{\chapter}[display]
+{\normalfont\bfseries}{}{0pt}{\Large}
+\begin{document}
+\maketitle
+
+\chapter{Problem 1}
+
+First we need to define parameters for the problem. Let us assume that days of a week starting from Monday are numerated as $i = 1,2,...,5$ respectively.  
+
+\begin{itemize}
+	\item $b_i$ = Buying price defined for the $i$th day.
+	\item $s_i$ = Selling price defined for the $i$th day.
+	\item $m_i$ = Number of shares bought on $i$th day.
+	\item $n_i$ = Number of shares sold on $i$th day.
+	\item $x_i$ = Number of shares owned at the end of $i$th day.
+	\item $y_i$ = Amount of money owned at the end of $i$th day. 
+\end{itemize}
+
+The objective is,
+\begin{equation}
+	max \{y_5\}
+\end{equation}
+
+such that,
+\begin{equation}
+\begin{split}
+y_0 &= 100 \\
+x_0 &= 0 \\
+y_i &= y_{i-1} + s_i*n_i - b_i*m_i \\
+x_i &= x_{i-1} + m_i - n_i \\
+n_i & \leq x_{i-1} \\
+b_i*m_i &\leq y_{i-1} \\
+m_i, n_i, x_i, y_i &\geq 0
+\end{split}
+\end{equation}
+\end{document}          
